@@ -1,8 +1,13 @@
 <?php
 
+use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\FormProcessor;
 use App\Models\Employee;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/employee', [EmployeeController::class, 'index']);
+Route::post('/employee', [EmployeeController::class, 'store']);
+Route::put('/employee', [EmployeeController::class, 'update']);
 
 Route::get('/', function () {
     return view('home', [
